@@ -1,0 +1,3 @@
+user1=firstname:John,lastname:Blake,group:general,password:upwd1
+user2=firstname:Bill,lastname:Blake,group:general,password:upwd2
+admin=firstname:,lastname:,group:admins,password:aaa
