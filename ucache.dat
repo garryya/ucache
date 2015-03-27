@@ -1,3 +1,6 @@
-user1=firstname:John,lastname:Blake,group:general,password:upwd1
-user2=firstname:Bill,lastname:Blake,group:general,password:upwd2
-admin=firstname:,lastname:,group:admins,password:aaa
+1=firstname:John,lastname:Blake,group:general,password:upwd1
+2=firstname:Bill,lastname:Blake,group:general,password:upwd2
+4=firstname:,lastname:,group:admins,password:aaa
+5=firstname:name5,lastname:lastname5,group:admins,password:aaa
+6=firstname:name6,lastname:lastname6,group:admins,password:aaa3
+3=firstname:name3,lastname:lastname3,group:observer,password:aaa
