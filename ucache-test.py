@@ -32,13 +32,19 @@ user_test_set1 = (
                 )
 
 def test(test_set):
+    print
+    print '* Running test-set:', test_set
+    print
+    test_passed = []
     for user_id, expected in test_set:
         udata = ustore.getUser(user_id)
         cache = '%r' % ustore._ucache
         passed = (udata or not expected['found']) and expected['cache'] == cache
+        test_passed.append(passed)
         print user_id, ':', '' if passed else 'NOT', 'passed | user data:', udata
         print ustore._ucache
         print '***'
+    print '* Test', 'PASSED' if all(test_passed) else 'FAILED'
 
 test(user_test_set0)
-#test(user_test_set1)
+test(user_test_set1)

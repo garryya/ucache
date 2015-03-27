@@ -11,7 +11,7 @@ class CacheNode:
     def __repr__(self):
         return '(%s,%s)' % (self.key,self.data)
 
-def listiter(node):
+def _cache_iterator(node):
     while node:
         yield node
         node = node._next
@@ -45,7 +45,7 @@ class UserCache:
         :param key:
         :return:node data if found, else None
         '''
-        for node in listiter(self._cache_head):
+        for node in _cache_iterator(self._cache_head):
             if node.key == key:
                 self._update_head(node)
                 return node.data
@@ -73,13 +73,13 @@ class UserCache:
 
     def __str__(self):
         s = 'cache: l=%d (%s) | ' % (self._cache_length,'full' if self._is_full() else 'not full')
-        for node in listiter(self._cache_head):
+        for node in _cache_iterator(self._cache_head):
             s = s + str(node) + ' '
         return s
 
     def __repr__(self):
         s = ''
-        for node in listiter(self._cache_head):
+        for node in _cache_iterator(self._cache_head):
             s += str(node)
         return s
 
